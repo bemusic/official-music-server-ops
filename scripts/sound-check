@@ -1,0 +1,46 @@
+#!/bin/bash
+
+echo '# scripts/sound-check <bms file> <song id>'
+echo
+echo '(Checks the volume of BMS files.)'
+echo
+
+if [ $# -lt 1 ]
+then
+  echo 'Error: No BMS file supplied'
+  exit 1
+fi
+
+if [ $# -lt 1 ]
+then
+  echo 'Error: No song ID supplied'
+  exit 1
+fi
+
+BMS_FILE="$1"
+SONG_ID="$2"
+TEMP_DIR=`mktemp -d`
+
+echo '## Preparation'
+echo
+echo "* BMS File: $BMS_FILE"
+echo "* Work Directory: $TEMP_DIR"
+echo
+
+echo '## BMS rendering'
+echo
+echo '```'
+bms-renderer "$BMS_FILE" "$TEMP_DIR/render.wav"
+echo '```'
+echo
+
+echo '## ReplayGain processing'
+echo
+echo '```'
+wavegain -ny "$TEMP_DIR/render.wav" 2>&1 | tee "$TEMP_DIR/wavegain-result.txt"
+echo '```'
+echo
+
+echo '## Copy file'
+echo
+cp "$TEMP_DIR/render.wav" "renders/$SONG_ID.wav"

@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+'use strict'
+
+const fs = require('fs')
+
+var out = [ ]
+var already = { }
+
+const songs = require(fs.realpathSync('./index.json')).songs
+
+songs.forEach(function(song) {
+  var artist = song.alias_of || song.artist
+  if (!already[artist] && artist !== 'flicknote') {
+    out.push({ name: artist, url: song.artist_url })
+    already[artist] = true
+  }
+})
+
+fs.writeFileSync('artists.json', JSON.stringify(out, null, 4))
+
+console.log('* Generated artists.json with %s artists from %s songs.', out.length, songs.length)

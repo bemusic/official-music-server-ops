@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo '# render-preview <wave> <staging dir> <replaygain> <trim start>'
+echo
+echo 'Renders a preview file.'
+echo
+echo 'It assumes the <wave> file has already applied ReplayGain.'
+echo '(Otherwise, SoX will clip upon loading the file.)'
+echo
+
+RENDERED_FILE="$1"
+OUTPUT_DIR="$2"
+TRIM_START="$3"
+
+sox "$RENDERED_FILE" -C 128 "$OUTPUT_DIR/_bemuse_preview.mp3" gain +4 trim "$TRIM_START" fade h 0.5 30 3

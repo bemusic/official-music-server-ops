@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+echo '# ./scripts/build-staging-index'
+echo
+echo 'Generates an index file for staging.'
+echo
+
+cd staging
+bemuse-tools index
+../scripts/_generate-artists-file

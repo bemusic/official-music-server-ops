@@ -1,0 +1,60 @@
+#!/bin/bash -e
+
+echo '# ./scripts/generate-previews'
+echo
+echo 'Generates previews of every song.'
+echo
+
+g () {
+  echo "$1"
+  ./scripts/_render-preview "renders/$1.wav" "staging/$1" "$2"
+}
+
+TODO () {
+  echo "TODO: $1"
+}
+
+# g '[5argon_encx]exargon' 10
+# g '[5argon]maidbattle' 87.5
+# g '[a_hisa]anhedonia' 43.5
+# g '[aaaa]echoes' 41
+# g '[aoi]olivia' 76
+# g '[chitose]blooming' 80
+# g '[chitose]musica_de_aves' 103.6
+# g '[daisan]ddd' 68.5
+# g '[drreb]fakepuppet' 36.7
+# g '[flicknote]bymyside' 96.5
+# g '[flicknote]onlylove_remix' 59.2
+# g '[ice]l' 33
+# g '[jun_kuroda]terpsichore' 46
+# g '[leaf]malchenia' 71.5
+# g '[leaf]pandora' 35
+# g '[lime]harmony' 56.8
+# g '[litmus]allisfair' 32.2
+# g '[litmus]latch' 63
+# g '[litmus]lovescream' 16.2
+# g '[litmus]scorpiondance' 1.5
+# g '[mo_no_chrome]kindlybreeze' 28
+# g '[pluck_ryo]futurity' 29
+# g '[polycube]agito' 61
+# g '[polycube]lastmorn' 15
+# g '[puru]homura' 31
+# g '[puru]toki' 28
+# g '[q_stol]love_this_moment' 14
+# g '[q_stol]out_of_the_dream' 19.5
+# g '[q_stol]the_bass_kills_you' 11
+# g '[ricora]epilogue' 98.5
+# g '[sakamiya]lyzoande_for_sacrifice' 33
+# g '[sky_delta]kreuz' 2
+# g '[snack]dddd' 37
+# g '[sobrem]encrux' 31.5
+# g '[sobrem]p_stands_for_party' 42.25
+# g '[stellabee]upsidedown' 16.3
+# g '[tis]airtrip' 15
+# g '[void]caelumize' 23
+# g '[w_tre]chicken' 44.5
+# g '[w_tre]mom' 65
+# g [ym1024]starless 89.5
+# g '[yui_ichii]smiling' 23.4
+# g '[yukitani]acp' 25
+# g '[aaaa]marginal' 41
