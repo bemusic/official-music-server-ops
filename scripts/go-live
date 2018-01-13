@@ -1,0 +1,16 @@
+#!/bin/bash -e
+source ./config
+if [ ! "$LIVE_TARGET" ]
+then
+  echo 'Must configure LIVE_TARGET variable'
+  exit 1
+fi
+
+echo '# ./scripts/go-live'
+echo
+echo 'Go live!'
+echo
+
+cd staging
+../scripts/_generate-live-index
+rsync -v live.json "$LIVE_TARGET/index.json"
