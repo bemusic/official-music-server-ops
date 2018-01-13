@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+'use strict'
+
+const fs = require('fs')
+
+const data = require(fs.realpathSync('./index.json'))
+const out = Object.assign({ }, data, {
+  songs: data.songs.filter(song => {
+    if (!song.readme) {
+      console.log('Skip', song.id, '[no readme]')
+      return false
+    }
+    if (song.unreleased) {
+      console.log('Skip', song.id, '[unreleased]')
+      return false
+    }
+    return true
+  })
+})
+fs.writeFileSync('live.json', JSON.stringify(out, null, 4))
+console.log('Generated live.json with %d songs (%d found)', out.songs.length, data.songs.length)
