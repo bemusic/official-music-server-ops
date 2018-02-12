@@ -5,6 +5,6 @@ echo
 echo 'Generates an index file for staging.'
 echo
 
-cd staging
+cd music
 bemuse-tools index
 ../scripts/_generate-artists-file

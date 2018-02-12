@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo '# _render-preview <wave> <staging dir> <trim start>'
+echo '# render-preview <wave> <music dir> <replaygain> <trim start>'
 echo
 echo 'Renders a preview file.'
 echo

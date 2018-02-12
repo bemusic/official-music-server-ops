@@ -11,6 +11,6 @@ echo
 echo 'Go live!'
 echo
 
-cd staging
+cd music
 ../scripts/_generate-live-index
 rsync -v live.json "$LIVE_TARGET/index.json"

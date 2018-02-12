@@ -7,7 +7,7 @@ echo
 
 g () {
   echo "$1"
-  ./scripts/_render-preview "renders/$1.wav" "staging/$1" "$2"
+  ./scripts/_render-preview "renders/$1.wav" "music/$1" "$2"
 }
 
 TODO () {
@@ -22,13 +22,11 @@ TODO () {
 # g '[chitose]blooming' 80
 # g '[chitose]musica_de_aves' 103.6
 # g '[daisan]ddd' 68.5
-# g '[dolphin]deconstrukt' 33.8
 # g '[drreb]fakepuppet' 36.7
 # g '[flicknote]bymyside' 96.5
 # g '[flicknote]onlylove_remix' 59.2
 # g '[ice]l' 33
 # g '[jun_kuroda]terpsichore' 46
-# g '[leaf]aleph-0' 10
 # g '[leaf]malchenia' 71.5
 # g '[leaf]pandora' 35
 # g '[lime]harmony' 56.8
@@ -56,14 +54,7 @@ TODO () {
 # g '[void]caelumize' 23
 # g '[w_tre]chicken' 44.5
 # g '[w_tre]mom' 65
-# g '[ym1024]hnc' 5
-# g '[ym1024]starless' 89.5
+# g [ym1024]starless 89.5
 # g '[yui_ichii]smiling' 23.4
 # g '[yukitani]acp' 25
 # g '[aaaa]marginal' 41
-
-# g '[dachs]overtrue' 68.7
-# g '[crimsona]belenus_saddle' 42.6
-# g '[etia]ikaros' 6.5
-# g '[ym2014]started' 75
-g '[iaht]sny' 2

@@ -1,2 +1,2 @@
 #!/bin/bash -e
-http-server --cors staging -p 9292
+http-server --cors music -p 9292
