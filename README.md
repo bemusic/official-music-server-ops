@@ -1,4 +1,3 @@
-
 # Bemuse official server management scripts
 
 Adding new songs to the official Bemuse server is not a simple process.
@@ -16,3 +15,39 @@ I have to:
 
 This repository contains the scripts that helps me with this workflow.
 
+
+## Server deployment
+
+Deployment process:
+
+    My laptop --> Google Cloud --> Actual music server
+
+Synchronizing from my laptop to Google Cloud:
+
+```
+# On laptop
+gsutil -m rsync -r music/ gs://bemuse-official-server.appspot.com/official-server/music/
+gsutil -m rsync -r renders/ gs://bemuse-official-server.appspot.com/official-server/renders/
+```
+
+Synchronizing from Google Cloud to music server:
+
+```
+# On music server
+docker run --rm -it --volumes-from gcloud-config \
+  -v /mnt/bemuse-server-data/official-server:/official-server \
+   google/cloud-sdk gsutil -m rsync -r \
+   gs://bemuse-official-server.appspot.com/official-server/ \
+   /official-server/
+```
+
+Synchronizing from music server to Google Cloud:
+
+```
+# On music server
+docker run --rm -it --volumes-from gcloud-config \
+  -v /mnt/bemuse-server-data/official-server:/official-server \
+   google/cloud-sdk gsutil -m rsync -r \
+   /official-server/ \
+   gs://bemuse-official-server.appspot.com/official-server/
+```
