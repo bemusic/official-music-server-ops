@@ -16,6 +16,22 @@ I have to:
 This repository contains the scripts that helps me with this workflow.
 
 
+## Folder structure
+
+These folders are included in this repository:
+
+- `admin` - An Electron-based GUI app to ease the workflow.
+- `scripts` - A folder containing various scripts.
+
+These folders are not in this repository:
+
+- `archive` - Contains raw downloaded files.
+- `music` - Contains the official music server content (this will be deployed).
+    - `index.json` - The staging JSON file (contains unreleased songs).
+    - `live.json` - The production JSON file.
+- `packages` - Working directory for adding new songs to Bemuse. When preparing a song for addition in Bemuse, I will do it in this folder before moving them to the staging server.
+- `renders` - Contains the rendered `.wav` file of each song. They are generated with `bms-renderer` and the loudness is normalized using WaveGain.
+
 ## Server deployment
 
 Deployment process:
