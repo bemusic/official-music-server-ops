@@ -67,3 +67,7 @@ docker run --rm -it --volumes-from gcloud-config \
    /official-server/ \
    gs://bemuse-official-server.appspot.com/official-server/
 ```
+
+## BGA conversion
+
+I run it on Hyper.sh. For the latest video conversion process, refer to <https://github.com/dtinth/hypertasks> for how I do it.
